@@ -30,43 +30,6 @@ The primary stakeholders for this project include:
 These stakeholders aim to increase vaccination rates in order to reduce the spread of infectious diseases and protect vulnerable populations.
 
 
-
-### Project Objectives
-
-The objectives of this project are to:
-
-Explore factors influencing vaccination decisions
-
-Build machine learning models to predict H1N1 vaccination
-
-Compare model performance
-
-Provide insights to support public health decision-making
-
-Project Workflow
-
-The project follows a standard machine learning workflow:
-
-Business Understanding
-
-Data Understanding
-
-Exploratory Data Analysis (EDA)
-
-Data Preparation
-
-Feature Engineering and Encoding
-
-Train/Test Split
-
-Model Training
-
-Model Evaluation
-
-Model Comparison
-
-Insights and Recommendations
-
 ## Key Results
 
 Main findings from the analysis:
@@ -125,16 +88,16 @@ Logistic Regression was selected as the final model because it provided the best
 
 The analysis revealed several important patterns:
 
-Doctor Recommendation
+- Doctor Recommendation
 Individuals advised by healthcare professionals were significantly more likely to vaccinate.
 
-Risk Perception
+- Risk Perception
 People who believed H1N1 posed a serious risk were more likely to receive the vaccine.
 
-Occupation
+- Occupation
 Healthcare workers showed higher vaccination rates due to increased exposure and awareness.
 
-Age Group
+- Age Group
 Older individuals were more likely to vaccinate than younger populations.
 
 ### Recommendations
