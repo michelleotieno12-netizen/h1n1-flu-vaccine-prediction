@@ -216,7 +216,11 @@ Several evaluation metrics were used to assess model performance:
 
 - Confusion Matrix
 
+![Confusion Matrix](images/plots/confusion_matrix.png)
+
 - ROC Curve and AUC Score
+
+![Confusion Matrix](images/plots/confusion_matrix.png)
 
 - Cross Validation
 
@@ -247,6 +251,8 @@ Interpretability is particularly important for public health stakeholders who ne
 ## Key Insights
 
 The analysis identified several important factors influencing vaccination behavior.
+
+![Feature Importance](images/plots/feature_importance.png)
 
 - Doctor Recommendation
 
