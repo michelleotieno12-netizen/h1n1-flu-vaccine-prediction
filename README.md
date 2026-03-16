@@ -220,7 +220,7 @@ Several evaluation metrics were used to assess model performance:
 
 - ROC Curve and AUC Score
 
-![Confusion Matrix](images/plots/confusion_matrix.png)
+![ROC Curve](images/plots/roc_curve.png)
 
 - Cross Validation
 
