@@ -122,6 +122,8 @@ Exploratory Data Analysis (EDA) was conducted to understand the structure of the
 
 - Doctor recommendation strongly correlates with vaccination behavior.
 
+![Doctor Recommendation](images/plots/doctor_recommendation.png)
+
 - Individuals with higher concern about H1N1 are more likely to vaccinate.
 
 - Healthcare workers tend to have higher vaccination rates.
@@ -134,9 +136,13 @@ Exploratory Data Analysis (EDA) was conducted to understand the structure of the
 
 - Vaccine attitude distributions
 
+![Vaccine Distribution](images/plots/vaccine_distribution.png)
+
 - Age group comparisons
 
 - Correlation heatmaps
+
+![Correlation Heatmap](images/plots/correlation_heatmap.png)
 
 ## Data Preparation
 
