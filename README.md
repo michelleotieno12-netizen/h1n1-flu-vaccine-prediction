@@ -1,14 +1,14 @@
 # h1n1-flu-vaccine-prediction
 ## Predicting H1N1 flu vaccine uptake using machine learning
 
-## Project Overview
+# Project Overview
 During the 2009 H1N1 pandemic, vaccination was one of the most important strategies used to reduce the spread of the virus. However, vaccination uptake varied significantly among individuals.
 
 This project builds machine learning classification models to predict whether an individual received the H1N1 vaccine based on demographic characteristics, health behaviors, and vaccine attitudes.
 
 The goal is to identify key factors influencing vaccination decisions and provide insights that can help public health organizations improve vaccination outreach strategies.
 
-## Business Problem
+# Business Problem
 
 Public health organizations need to understand why some individuals choose to vaccinate while others do not.
 
@@ -18,7 +18,7 @@ Key Question
 
 Can we predict whether someone will receive the H1N1 vaccine using demographic information, health behaviors, and vaccine attitudes?
 
-#### Stakeholder
+## Stakeholder
 The primary stakeholders for this project include:
 
 - Public health organizations
@@ -30,7 +30,7 @@ The primary stakeholders for this project include:
 These stakeholders aim to increase vaccination rates in order to reduce the spread of infectious diseases and protect vulnerable populations.
 
 
-## Key Results
+# Key Results
 
 Main findings from the analysis:
 
@@ -43,18 +43,18 @@ Main findings from the analysis:
 - Healthcare workers had higher vaccination uptake
 
 
-## Model Performance
-### Confusion Matrix
+# Model Performance
+## Confusion Matrix
 
 The model correctly classified most individuals who did not receive the vaccine, but performance was slightly lower when predicting vaccinated individuals due to class imbalance.
 ![Confusion Matrix](images/plots/confusion_matrix.png)
 
-### ROC Curve
+## ROC Curve
 
 The ROC curve shows that the model performs significantly better than random guessing, with an AUC score of approximately 0.83.
 ![ROC Curve](images/plots/roc_curve.png)
 
-### Feature Importance
+## Feature Importance
 
 The most influential predictors include:
 
@@ -67,7 +67,7 @@ The most influential predictors include:
 - Concern about H1N1
 ![Feature Importance](images/plots/feature_importance.png)
 
-### Models Used
+## Models Used
 
 Three classification models were developed and compared:
 
@@ -84,7 +84,7 @@ Random Forest	              0.83
 
 Logistic Regression was selected as the final model because it provided the best balance between performance and interpretability.
 
-### Key Insights
+# Key Insights
 
 The analysis revealed several important patterns:
 
@@ -100,7 +100,7 @@ Healthcare workers showed higher vaccination rates due to increased exposure and
 - Age Group
 Older individuals were more likely to vaccinate than younger populations.
 
-### Recommendations
+# Recommendations
 
 Public health organizations could improve vaccination uptake by:
 
@@ -112,7 +112,7 @@ Public health organizations could improve vaccination uptake by:
 
 - Expanding workplace vaccination programs
 
-### Limitations
+# Limitations
 
 - The dataset relies on self-reported survey data
 
@@ -122,7 +122,7 @@ Public health organizations could improve vaccination uptake by:
 
 - Machine learning identifies patterns but does not establish causation
 
-### Future Improvements
+# Future Improvements
 
 Future work could include:
 
@@ -134,7 +134,7 @@ Future work could include:
 
 - Including healthcare access and geographic variables
 
-### Conclusion
+# Conclusion
 
 This project demonstrates how machine learning can help identify the key factors that influence vaccination decisions. By understanding the drivers of vaccination behavior, public health organizations can design more effective campaigns that encourage individuals to protect themselves and their communities.
 
