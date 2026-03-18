@@ -1,142 +1,236 @@
-# h1n1-flu-vaccine-prediction
-## Predicting H1N1 flu vaccine uptake using machine learning
+# H1N1 Flu Vaccine Prediction
 
-# Project Overview
-During the 2009 H1N1 pandemic, vaccination was one of the most important strategies used to reduce the spread of the virus. However, vaccination uptake varied significantly among individuals.
+Predicting H1N1 flu vaccine uptake using machine learning.
 
-This project builds machine learning classification models to predict whether an individual received the H1N1 vaccine based on demographic characteristics, health behaviors, and vaccine attitudes.
+---
 
-The goal is to identify key factors influencing vaccination decisions and provide insights that can help public health organizations improve vaccination outreach strategies.
+##  Project Overview
+
+During the 2009 H1N1 influenza pandemic, vaccination was one of the most effective strategies used to reduce infection rates and prevent severe outcomes. Despite this, vaccination uptake varied significantly across different population groups.
+
+This project applies machine learning techniques to predict whether an individual received the H1N1 vaccine based on:
+
+- Demographic characteristics  
+- Health conditions  
+- Preventive behaviors  
+- Attitudes toward vaccines  
+
+Beyond prediction, the goal is to identify key factors influencing vaccination decisions and generate actionable insights for public health organizations.
+
+---
+
+##  Dataset
+
+The dataset used in this project comes from the **National 2009 H1N1 Flu Survey**.
+
+🔗 Dataset Source:  
+https://www.drivendata.org/competitions/66/flu-shot-learning/data/
+
+### Dataset Description
+
+The dataset consists of two main files:
+
+- `training_set_features.csv` → Predictor variables  
+- `training_set_labels.csv` → Target variables  
+
+Each row represents an individual respondent and includes:
+
+- Demographics (age, sex, race, income)  
+- Health conditions  
+- Behavioral factors (mask use, hand washing, etc.)  
+- Opinions and perceptions about vaccines  
+
+The datasets are merged using a unique identifier: `respondent_id`.
+
+### Target Variable
+
+- `h1n1_vaccine`  
+  - `1` → Received vaccine  
+  - `0` → Did not receive vaccine  
+
+---
 
 # Business Problem
 
-Public health organizations need to understand why some individuals choose to vaccinate while others do not.
+Public health organizations aim to increase vaccination rates to reduce the spread of infectious diseases.
 
-Understanding these patterns can help design better vaccination campaigns and improve vaccine uptake.
+However, not all individuals choose to vaccinate.
 
-Key Question
+## Key Question:
+> Can we predict whether someone will receive the H1N1 vaccine based on their characteristics and behaviors?
 
-Can we predict whether someone will receive the H1N1 vaccine using demographic information, health behaviors, and vaccine attitudes?
+Understanding this helps:
+- Improve vaccine outreach  
+- Target hesitant populations  
+- Design better public health campaigns  
 
-## Stakeholder
-The primary stakeholders for this project include:
+---
 
-- Public health organizations
+##  Stakeholders
 
-- Healthcare policymakers
+- Public health organizations  
+- Healthcare policymakers  
+- Medical professionals  
 
-- Medical professionals involved in vaccination campaigns
+These stakeholders rely on data-driven insights to improve vaccination strategies and protect vulnerable populations.
 
-These stakeholders aim to increase vaccination rates in order to reduce the spread of infectious diseases and protect vulnerable populations.
+---
 
+##  Methodology
 
-# Key Results
+The project follows a structured data science workflow:
 
-Main findings from the analysis:
+### 1. Data Preparation
+- Merged datasets using `respondent_id`
+- Handled missing values using mode imputation
+- Removed irrelevant columns (e.g., `respondent_id`)
+- Applied one-hot encoding to categorical variables
+- Performed train-test split
 
-- Logistic Regression achieved 84% accuracy
+---
 
-- Doctor recommendation was the strongest predictor of vaccination
+### 2. Pipeline Implementation
+A machine learning pipeline was used to:
 
-- Individuals with higher perceived H1N1 risk were more likely to vaccinate
+- Apply preprocessing (scaling + encoding)
+- Train models consistently
+- Prevent data leakage
+- Improve reproducibility
 
-- Healthcare workers had higher vaccination uptake
+---
 
+### 3. Reusable Evaluation Function
+A reusable function was created to standardize:
 
-# Model Performance
-## Confusion Matrix
+- Model training  
+- Predictions  
+- Evaluation metrics  
+- Visualization  
 
-The model correctly classified most individuals who did not receive the vaccine, but performance was slightly lower when predicting vaccinated individuals due to class imbalance.
-![Confusion Matrix](images/plots/confusion_matrix.png)
+This improves code quality and ensures fair model comparison.
 
-## ROC Curve
+---
 
-The ROC curve shows that the model performs significantly better than random guessing, with an AUC score of approximately 0.83.
+### 4. Models Used
+
+- Logistic Regression  
+- Decision Tree  
+- Random Forest  
+
+---
+
+### 5. Hyperparameter Tuning
+
+GridSearchCV was used to optimize the Decision Tree model by tuning:
+
+- Maximum depth  
+- Minimum samples per split  
+
+This helps balance bias and variance and improve performance.
+
+---
+
+### 6. Model Evaluation
+
+Models were evaluated using:
+
+- Accuracy  
+- Precision  
+- Recall  
+- F1-score  
+- ROC-AUC  
+
+Cross-validation was used to ensure stability and generalization.
+
+---
+
+##  Model Performance
+
+| Model | Accuracy |
+|------|--------|
+| Logistic Regression | 0.84 |
+| Decision Tree | 0.75 |
+| Random Forest | 0.83 |
+
+### Final Model:
+ Logistic Regression
+
+**Why?**
+- Strong performance  
+- Stable across folds  
+- Easy to interpret  
+
+---
+
+##  Key Visualizations
+
+### Vaccine Distribution
+![Vaccine Distribution](images/plots/vaccine_distribution.png)
+
+### Doctor Recommendation vs Vaccination
+![Doctor Recommendation](images/plots/doctor_recommendation.png)
+
+### ROC Curve
 ![ROC Curve](images/plots/roc_curve.png)
 
-## Feature Importance
-
-The most influential predictors include:
-
-- Doctor recommendation
-
-- Perceived H1N1 risk
-
-- Vaccine effectiveness beliefs
-
-- Concern about H1N1
+### Feature Importance
 ![Feature Importance](images/plots/feature_importance.png)
 
-## Models Used
+---
 
-Three classification models were developed and compared:
+##  Key Insights
 
-- Logistic Regression
+- Doctor recommendation is the strongest predictor of vaccination  
+- Individuals with higher perceived risk are more likely to vaccinate  
+- Healthcare workers show higher vaccination uptake  
+- Older individuals are more likely to receive the vaccine  
+- Class imbalance affects model recall  
 
-- Decision Tree
+---
 
-- Random Forest
+##  Recommendations
 
-Model	                      Accuracy
-Logistic Regression	          0.84
-Decision Tree	              0.75
-Random Forest	              0.83
+Based on the findings:
 
-Logistic Regression was selected as the final model because it provided the best balance between performance and interpretability.
+- Encourage healthcare providers to actively recommend vaccines  
+- Increase public awareness of vaccine risks and benefits  
+- Target younger populations with tailored campaigns  
+- Expand workplace vaccination programs  
 
-# Key Insights
+---
 
-The analysis revealed several important patterns:
+##  Future Recommendations
 
-- Doctor Recommendation
-Individuals advised by healthcare professionals were significantly more likely to vaccinate.
+- Use machine learning to identify high-risk or hesitant populations  
+- Integrate vaccination reminders into healthcare systems  
+- Improve accessibility and distribution infrastructure  
+- Conduct continuous public health awareness campaigns  
 
-- Risk Perception
-People who believed H1N1 posed a serious risk were more likely to receive the vaccine.
+---
 
-- Occupation
-Healthcare workers showed higher vaccination rates due to increased exposure and awareness.
+##  Limitations
 
-- Age Group
-Older individuals were more likely to vaccinate than younger populations.
+- Data is self-reported and may contain inaccuracies  
+- Dataset reflects 2009 behavior (may not generalize today)  
+- Missing values required imputation  
+- Class imbalance impacts model performance  
+- Models identify patterns, not causation  
 
-# Recommendations
+---
 
-Public health organizations could improve vaccination uptake by:
+##  Project Files
 
-- Encouraging healthcare providers to actively recommend vaccines
+-  Notebook: `notebooks/project_notebook.ipynb`  
+-  Notebook PDF: `notebooks/project_notebook.pdf`  
+-  Presentation: `presentation/presentation.pdf`  
 
-- Increasing public awareness about influenza risks
+---
 
-- Targeting groups with lower vaccination rates
+##  Conclusion
 
-- Expanding workplace vaccination programs
+This project demonstrates how machine learning can be used to predict vaccination behavior and uncover key drivers such as doctor recommendation and risk perception.
 
-# Limitations
-
-- The dataset relies on self-reported survey data
-
-- Data reflects 2009 pandemic conditions
-
-- Some missing values required imputation
-
-- Machine learning identifies patterns but does not establish causation
-
-# Future Improvements
-
-Future work could include:
-
-- Testing additional models such as Gradient Boosting or XGBoost
-
-- Applying more advanced feature engineering
-
-- Incorporating newer vaccination datasets
-
-- Including healthcare access and geographic variables
-
-# Conclusion
-
-This project demonstrates how machine learning can help identify the key factors that influence vaccination decisions. By understanding the drivers of vaccination behavior, public health organizations can design more effective campaigns that encourage individuals to protect themselves and their communities.
+These insights provide valuable guidance for public health organizations aiming to improve vaccination uptake and design more effective health interventions.
 
 
 
